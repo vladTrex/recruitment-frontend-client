@@ -1,9 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { render } from 'react-dom';
 
+window.React = React;
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+export const Home = () => 
+    <div>
+        <h4>Main page</h4>
+        <p>Recruitment App.</p>
+    </div>
+
+render(
+    <Home />,
+    document.getElementById('rootApp')
+);
