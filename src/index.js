@@ -2,14 +2,15 @@ import React from 'react';
 import { render } from 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createStore } from "redux";
+
+import storeFactory from './store'
+import { fetchVacancies, addVacancy } from './store/actions';
 
 import Home from './containers/homeContainer';
 import Whoops404 from './components/whoops404';
-import reducers from './store/reducers';
-import { fetchVacancies, addVacancy } from './store/actions';
 
-const store = createStore(reducers);
+
+const store = storeFactory();
 
 window.React = React;
 window.store = store;
@@ -18,7 +19,7 @@ store.dispatch(fetchVacancies());
 store.dispatch(addVacancy({title: 'Vacancy 1', description: 'Some cool description'}));
 
 render(
-    <Provider store={store}>
+    <Provider store={storeFactory}>
         <HashRouter>
             <div className='main'>
                 <Switch>
