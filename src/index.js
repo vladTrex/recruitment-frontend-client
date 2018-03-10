@@ -7,13 +7,15 @@ import { createStore } from "redux";
 import Home from './containers/homeContainer';
 import Whoops404 from './components/whoops404';
 import reducers from './store/reducers';
-import { fetchVacancies } from './store/actions';
+import { fetchVacancies, addVacancy } from './store/actions';
 
 const store = createStore(reducers);
 
 window.React = React;
 window.store = store;
+
 store.dispatch(fetchVacancies());
+store.dispatch(addVacancy({title: 'Vacancy 1', description: 'Some cool description'}));
 
 render(
     <Provider store={store}>

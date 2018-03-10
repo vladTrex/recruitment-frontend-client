@@ -1,8 +1,10 @@
-import { FETCH_VACANCIES } from '../../constants/actionTypes';
+import * as actionTypes from '../../constants/actionTypes';
 
 export const vacancies = (state = [], action) => {
     switch (action.type) {
-        case FETCH_VACANCIES:
+        case actionTypes.FETCH_VACANCIES:
+            return [...action.payload, ...state]
+        case actionTypes.ADD_VACANCY:
             return [action.payload, ...state]
         default:
             return state;
