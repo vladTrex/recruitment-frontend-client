@@ -1,5 +1,10 @@
+import { FETCH_VACANCIES } from '../../constants/actionTypes';
 
-export const vacancies = (state = [], action) => [
-    { title: 'Vacancy 1', description: 'Super cool description for Vacancy 1' },
-    { title: 'Vacancy 2', description: 'Description for Vacancy 2' }
-];
+export const vacancies = (state = [], action) => {
+    switch (action.type) {
+        case FETCH_VACANCIES:
+            return [action.payload, ...state]
+        default:
+            return state;
+    }
+};

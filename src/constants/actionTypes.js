@@ -1,0 +1,1 @@
+export const FETCH_VACANCIES = 'FETCH_VACANCIES';
