@@ -12,3 +12,11 @@ export const addVacancy = (payload = {}) => ({
     type: actionTypes.ADD_VACANCY,
     payload
 });
+
+export const setUser = (user = {}) => dispatch => {
+    dispatch(addVacancy({ title: 'Vacancy 1', description: 'Some cool description' }));
+    dispatch({
+        type: actionTypes.SET_USER,
+        user
+    })
+};

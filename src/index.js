@@ -4,7 +4,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import storeFactory from './store'
-import { fetchVacancies, addVacancy } from './store/actions';
+import { fetchVacancies, addVacancy, setUser } from './store/actions';
 
 import Home from './containers/homeContainer';
 import Whoops404 from './components/whoops404';
@@ -17,6 +17,7 @@ window.store = store;
 
 store.dispatch(fetchVacancies());
 store.dispatch(addVacancy({title: 'Vacancy 1', description: 'Some cool description'}));
+store.dispatch(setUser({name: 'John Doe'}));
 
 render(
     <Provider store={storeFactory}>

@@ -10,3 +10,12 @@ export const vacancies = (state = [], action) => {
             return state;
     }
 };
+
+export const user = (state = {}, action) => {
+    switch(action.type){
+        case actionTypes.SET_USER:
+            return action.user;
+        default:
+            return state;
+    }
+}
