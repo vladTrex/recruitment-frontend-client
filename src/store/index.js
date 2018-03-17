@@ -2,8 +2,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import reducers from './reducers';
-
 const logger = store => next => action => {
     let result
     console.groupCollapsed("dispatching", action.type)
@@ -15,9 +13,6 @@ const logger = store => next => action => {
     return result
 }
 
-const storeFactory = () => createStore(
-    reducers,
-    applyMiddleware(thunk, logger)
-)
+const storeFactory = applyMiddleware(thunk, logger)(createStore)
 
 export default storeFactory

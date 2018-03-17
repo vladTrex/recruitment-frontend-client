@@ -6,11 +6,12 @@ import { Provider } from 'react-redux';
 import storeFactory from './store'
 import { fetchVacancies, addVacancy, setUser } from './store/actions';
 
+import reducers from './store/reducers'
 import Home from './containers/homeContainer';
 import Whoops404 from './components/whoops404';
 
 
-const store = storeFactory();
+const store = storeFactory(reducers);
 
 window.React = React;
 window.store = store;
