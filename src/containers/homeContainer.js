@@ -1,9 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import Menu from '../components/menu'
+import Home from '../components/home';
 
-export default () => 
-    <div>
-        <Menu />
-        <p>Recruitment App.</p>
-    </div>
+const mapStateToProps = state => ({
+    vacancies: state.vacancies
+});
+
+export default connect(mapStateToProps)(Home);
