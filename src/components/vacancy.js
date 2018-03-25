@@ -1,7 +1,8 @@
 import React from 'react';
 
-export default ({vacancy}) =>
+export default ({ vacancy }) => 
     <div>
-        <h4>{vacancy.id}</h4>
+        <h4>{vacancy.title}</h4>
         <p>Recruitment App.</p>
     </div>
+

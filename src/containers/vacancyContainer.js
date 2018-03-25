@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Vacancy from '../components/vacancy';
 
 const mapStateToProps = (state, ownProps) => ({
-    vacancy: state.vacancies[0]
+    vacancy: state.vacancies.find(vacancy => vacancy.id === Number(ownProps.match.params.id))
 });
 
 export default connect(mapStateToProps)(Vacancy);
