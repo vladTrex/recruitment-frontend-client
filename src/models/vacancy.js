@@ -1,0 +1,1 @@
+export const getVacancyById = (vacancies, id) => vacancies.find(vacancy => vacancy.id === id)
