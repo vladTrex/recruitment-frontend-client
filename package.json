@@ -4,7 +4,8 @@
   "description": "Front-end client for Recruitment app.",
   "main": "index.js",
   "scripts": {
-    "start": "opener http://localhost:3000 & webpack-dev-server"
+    "start": "webpack-dev-server & opener http://localhost:3000",
+    "generate-store": "babel-node ./src/ci_scripts/generateStore.js"
   },
   "author": "Vlad Tertyshnyi <vladislafus@gmail.com>",
   "license": "MIT",

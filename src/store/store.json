@@ -1,0 +1,24 @@
+{
+    "vacancies": [
+        {
+            "title": "Vacancy 1",
+            "description": "Some description for vacancy 1",
+            "id": "30c627de-758e-4859-8e0f-790cc5ce6e75"
+        },
+        {
+            "title": "Vacancy 2",
+            "description": "Some description for vacancy 2",
+            "id": "ee560edf-5209-47f0-8cb6-fb153128ae2a"
+        },
+        {
+            "title": "Vacancy 3",
+            "description": "Some description for vacancy 3",
+            "id": "fa1900fc-f926-4221-9cc9-1293f056c3e8"
+        },
+        {
+            "title": "Vacancy 4",
+            "description": "Some description for vacancy 4",
+            "id": "74482100-a349-4280-9503-e77cd482c5f1"
+        }
+    ]
+}
