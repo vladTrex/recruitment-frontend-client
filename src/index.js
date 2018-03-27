@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import 'whatwg-fetch';
 
 import store from './store'
 import { fetchVacancies, addVacancy, setUser } from './store/actions';
@@ -13,8 +14,13 @@ import Whoops404 from './components/whoops404';
 window.React = React;
 window.store = store;
 
-store.dispatch(fetchVacancies());
-store.dispatch(setUser({name: 'John Doe'}));
+// store.dispatch(setUser({name: 'John Doe'}));
+
+fetch('/store.json')
+  .then((res) => res.json())
+  .then((data) => {
+    store.dispatch(fetchVacancies(data.vacancies));
+  });
 
 render(
     <Provider store={store}>

@@ -2,12 +2,9 @@ import { v4 } from 'uuid';
 
 import * as actionTypes from '../../constants/actionTypes';
 
-export const fetchVacancies = () => ({
+export const fetchVacancies = payload => ({
     type: actionTypes.FETCH_VACANCIES,
-    payload: [
-        { id: 1, title: 'Vacancy 1', description: 'Super cool description for Vacancy 1' },
-        { id: 2, title: 'Vacancy 2', description: 'Description for Vacancy 2' }
-    ]
+    payload
 });
 
 export const addVacancy = (payload = {}) => ({

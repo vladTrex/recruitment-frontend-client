@@ -19,7 +19,7 @@ const vacancies = source.map(item => {
 
 const store = {vacancies: vacancies};
 
-fs.writeFile('./src/store/store.json', JSON.stringify(store, null, 4), 'utf8', function (err) {
+fs.writeFile('./dist/store.json', JSON.stringify(store, null, 4), 'utf8', function (err) {
     if (err) throw err;
     console.log('-- Store was generated --');
 });
