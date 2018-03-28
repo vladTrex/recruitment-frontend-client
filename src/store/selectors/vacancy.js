@@ -1,10 +1,11 @@
 import { createSelector } from 'reselect';
+import { memoize } from 'lodash';
 
 import * as vacancyModel from '../../models/vacancy';
 
 export const getAllVacancies = state => state.vacancies;
 
-export const getVacancyById = id => createSelector(
+export const getVacancyById = createSelector(
     getAllVacancies,
-    vacancies => vacancies.find(vacancy => vacancy.id === id)
+    vacancyModel.getVacancyById
 );

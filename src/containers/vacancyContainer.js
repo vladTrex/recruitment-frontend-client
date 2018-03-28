@@ -5,7 +5,7 @@ import { getVacancyById } from '../store/selectors/vacancy';
 import Vacancy from '../components/vacancy';
 
 const mapStateToProps = (state, ownProps) => ({
-    vacancy: getVacancyById(ownProps.match.params.id)(state)
+    vacancy: getVacancyById(state)(ownProps.match.params.id)
 });
 
 export default connect(mapStateToProps)(Vacancy);
