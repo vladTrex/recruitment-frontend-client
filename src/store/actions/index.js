@@ -19,3 +19,8 @@ export const setUser = (user = {}) => dispatch => {
         user
     })
 };
+
+export const authentificate = isLoggedIn => ({
+    type: actionTypes.CHANGE_AUTH,
+    payload: isLoggedIn
+});
