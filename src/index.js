@@ -7,6 +7,8 @@ import 'whatwg-fetch';
 
 import { store, persistor } from './store'
 
+import AuthHOC from './components/HOCs/AuthHOC';
+import Login from './containers/loginContainer';
 import Home from './containers/homeContainer';
 import Vacancy from './containers/vacancyContainer';
 import Whoops404 from './components/whoops404';
@@ -21,8 +23,8 @@ render(
         <HashRouter>
             <div className='main'>
                 <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route path='/vacancy/:id' component={Vacancy} />
+                    <Route exact path='/' component={AuthHOC(Home)} />
+                    <Route path='/vacancy/:id' component={AuthHOC(Vacancy)} />
                     <Route component={Whoops404} />
                 </Switch>
             </div>
