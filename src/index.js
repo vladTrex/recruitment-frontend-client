@@ -8,7 +8,6 @@ import 'whatwg-fetch';
 import {store, persistor} from './store'
 
 import App from './containers/appContainer';
-import AuthHOC from './components/HOCs/AuthHOC';
 import Login from './containers/loginContainer';
 import Home from './containers/homeContainer';
 import Vacancy from './containers/vacancyContainer';
@@ -24,9 +23,9 @@ render(
             <BrowserRouter>
                 <App>
                     <Switch>
-                        <Route exact path='/' component={AuthHOC(Home)}/>
-                        <Route path='/vacancy/:id' component={AuthHOC(Vacancy)}/>
-                        <Route path='/vacancies' component={AuthHOC(Vacancies)}/>
+                        <Route exact path='/' component={Home}/>
+                        <Route path='/vacancy/:id' component={Vacancy}/>
+                        <Route path='/vacancies' component={Vacancies}/>
                         <Route component={Whoops404}/>
                     </Switch>
                 </App>

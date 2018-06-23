@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default ComposedComponent => {
-    class Auth extends Component {
+export default ChildComponent => {
+    class ComposedComponent extends Component {
         componentDidMount() {
             this.shouldNavigateAway();
         }
@@ -11,18 +11,20 @@ export default ComposedComponent => {
             this.shouldNavigateAway();
         }
 
-        shouldNavigateAway(){
+        shouldNavigateAway() {
             if (!this.props.auth) {
                 this.props.history.push('/');
             }
         }
 
         render() {
-            return <ComposedComponent {...this.props} />
+            return <ChildComponent {...this.props} />;
         }
     }
 
-    const mapStateToProps = state => ({auth: state.auth});
+    function mapStateToProps(state) {
+        return { auth: state.auth };
+    }
 
-    return connect(mapStateToProps)(Auth);
-}
+    return connect(mapStateToProps)(ComposedComponent);
+};

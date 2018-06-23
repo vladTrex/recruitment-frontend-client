@@ -4,6 +4,7 @@ import {compose, lifecycle} from 'recompose';
 
 import {fetchVacancies} from '../store/actions';
 import Home from '../components/home';
+import AuthHOC from "../components/HOCs/AuthHOC";
 
 
 export default compose(
@@ -18,5 +19,6 @@ export default compose(
                     fetchVacancies(data.vacancies)
                 });
         }
-    })
+    }),
+    AuthHOC
 )(Home);

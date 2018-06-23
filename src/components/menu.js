@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default ({ authentificate, authentificated }) => 
     <div>
-        <Link to='/'>Home</Link> |
-        <Link to='/vacancies'>Vacancies</Link> |
+        <NavLink to='/'>Home</NavLink> |
+        <NavLink to='/vacancies'>Vacancies</NavLink> |
         {authentificated ? 
             <button onClick={() => authentificate(false)}>Sign out</button> : 
             <button onClick={() => authentificate(true)}>Sign In</button> }
