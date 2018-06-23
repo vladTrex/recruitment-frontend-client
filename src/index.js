@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {HashRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react'
 import 'whatwg-fetch';
@@ -21,7 +21,7 @@ window.store = store;
 render(
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-            <HashRouter>
+            <BrowserRouter>
                 <App>
                     <Switch>
                         <Route exact path='/' component={AuthHOC(Home)}/>
@@ -30,7 +30,7 @@ render(
                         <Route component={Whoops404}/>
                     </Switch>
                 </App>
-            </HashRouter>
+            </BrowserRouter>
         </PersistGate>
     </Provider>
     ,

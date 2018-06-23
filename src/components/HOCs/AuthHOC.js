@@ -1,18 +1,22 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 export default ComposedComponent => {
     class Auth extends Component {
-        componentWillMount(){
-            if(!this.props.auth){
-                this.props.history.push('/')
-            }
+        componentDidMount() {
+            this.shouldNavigateAway();
         }
-        componentWillUpdate(nextProps){
-            if(!nextProps.auth){
+
+        componentDidUpdate() {
+            this.shouldNavigateAway();
+        }
+
+        shouldNavigateAway(){
+            if (!this.props.auth) {
                 this.props.history.push('/');
             }
         }
+
         render() {
             return <ComposedComponent {...this.props} />
         }
